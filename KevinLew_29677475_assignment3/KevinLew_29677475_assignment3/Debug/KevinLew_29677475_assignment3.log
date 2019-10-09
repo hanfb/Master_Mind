@@ -1,0 +1,15 @@
+﻿  main.cpp
+c:\users\kevin\source\repos\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\main.cpp(4): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\kevin\source\repos\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\main.cpp(14): warning C4101: 'column': unreferenced local variable
+c:\users\kevin\source\repos\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\main.cpp(14): warning C4101: 'row': unreferenced local variable
+c:\users\kevin\source\repos\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\main.cpp(81): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+c:\users\kevin\source\repos\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\main.cpp(152): warning C4018: '<': signed/unsigned mismatch
+c:\users\kevin\source\repos\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\main.cpp(157): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+c:\users\kevin\source\repos\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\main.cpp(191): warning C4018: '<': signed/unsigned mismatch
+c:\users\kevin\source\repos\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\main.cpp(206): warning C4018: '<': signed/unsigned mismatch
+c:\users\kevin\source\repos\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\main.cpp(211): warning C4018: '<': signed/unsigned mismatch
+c:\users\kevin\source\repos\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\main.cpp(213): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+c:\users\kevin\source\repos\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\main.cpp(254): warning C4018: '<': signed/unsigned mismatch
+c:\users\kevin\source\repos\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\main.cpp(270): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+c:\users\kevin\source\repos\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\kevinlew_29677475_assignment3\main.cpp(274): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+  KevinLew_29677475_assignment3.vcxproj -> C:\Users\Kevin\source\repos\KevinLew_29677475_assignment3\KevinLew_29677475_assignment3\Debug\KevinLew_29677475_assignment3.exe

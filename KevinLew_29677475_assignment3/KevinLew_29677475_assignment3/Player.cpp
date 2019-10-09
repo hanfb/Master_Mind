@@ -2,29 +2,21 @@
 
 Player::Player()
 {
-	playerName = "BOB";
+	playerName = "QUITHASBEENENTERED";
 	difficulty = 1;
 	score = 0;
 	numberOfWins = 0;
+	gamesUntilPromotion = 5;
+	gamesUntilDemotion = 5;
 }
 
-Player::Player(std::string inputName, std::string inputDifficulty) {
+Player::Player(std::string inputName, int inputDifficulty) {
 	playerName = inputName;
-	if (inputDifficulty == "Job's Done") {
-		difficulty = 0;
-	}
-	else if(inputDifficulty == "Jobs") {
-		difficulty = 1;
-	}
-	else if (inputDifficulty == "Alcoholism") {
-		difficulty = 2;
-	}
-	else {
-		std::cout << "\nPlease enter valid input, the difficulty is set to normal for now" << std::endl;
-		difficulty = 1;
-	}
+	difficulty = inputDifficulty;
 	score = 0;
 	numberOfWins = 0;
+	gamesUntilPromotion = 5;
+	gamesUntilDemotion = 5;
 }
 
 Player::~Player()
@@ -36,16 +28,42 @@ std::string Player::getPlayerName() { return playerName; }
 int Player::getDifficulty() { return difficulty; }
 int Player::getScore() { return score; }
 int Player::getNumberOfWins() { return numberOfWins; }
+int Player::getGamesUntilPromotion() { return gamesUntilPromotion; }
+int Player::getGamesUntilDemotion() { return gamesUntilDemotion; }
 
 // mutators
 void Player::setNewName(std::string newName) {
-	if (newName.length > 0) {
+	if (newName.size() > 0) {
 		playerName = newName;
 	}
 }
 void Player::setNewScore(int newScore) {
 	score += newScore;
 }
+void Player::setNewDifficulty(int direction) {
+	if (direction == 1) {
+		difficulty++;
+	}
+	else {
+		difficulty--;
+	}
+}
 void Player::incrementNumberOfWins() {
 	numberOfWins += 1;
+}
+void Player::changeGamesUntilPromotion(bool win) {
+	if (win) {
+		gamesUntilPromotion--;
+	}
+	else {
+		gamesUntilPromotion = 5;
+	}
+}
+void Player::changeGamesUntilDemotion(bool win) {
+	if (!win) {
+		gamesUntilDemotion--;
+	}
+	else {
+		gamesUntilDemotion = 5;
+	}
 }

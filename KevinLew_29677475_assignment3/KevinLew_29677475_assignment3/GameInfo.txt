@@ -1,0 +1,28 @@
+Losing hope of your future as countless employment applications are turned 
+down one after another, one agency saw talent in you, and you are recruited 
+by the Moldovan cipher bureau. You are to help crack a newly emerged encryption 
+software “Master Mind”, in the hopes of a stable job and future promotions, 
+you must defeat master mind.
+
+As you stare at the screen knowing nothing of cryptography, lines of rules appear on your screen:
+	1.	I (Master Mind) will decide a select any 4 numbers (from numbers 1-8) 
+		in any combination to create the hidden code.
+	2.	You will attempt to determine the hidden code by selecting 4 numbers at a time 
+		by placing them in the order you think matches the hidden code. (easy right?)
+	3.	Depending on the quality of your selection (not expecting much):
+		-	If a number you selected is in my code, but in the wrong position, 
+			(?) symbol will be displayed to taunt you and goad you into a false sense of security.
+		-	If a number you selected is in my code and in the correct position, 
+			(o) symbol will be displayed.
+	4.	You will have 10 attempts, and if you STILL cannot correctly guess my code then you lose, 
+		and you will lose your job. If you win then you get a cookie.
+
+You may choose from the difficulty options:
+	-	EASY (note: no future promotion) - 4 numbers (from numbers 0-5), 10 attempts
+	-	NORMAL - 5 numbers (from numbers 0-7), 12 attempts
+	-	ALCOHOLISM (when you lose your job) - 6 numbers (from numbers 0-9), 14 attempts
+
+If you win 5 games in a row, you may choose to promote to a harder difficulty.
+if you lose 5 games in a row you will be automatically DEMOTED (be thankful you still have the job).
+
+YOU MAY ENTER 'quit' AT ANYTIME TO EXIT THE GAME.
