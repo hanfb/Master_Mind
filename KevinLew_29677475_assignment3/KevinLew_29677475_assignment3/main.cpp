@@ -215,8 +215,9 @@ void printTable(Board board, int rowsUsed) {
 
 std::vector<int> compareUserCode(std::vector<int> userCode, std::vector<int>code) {
 	std::vector<int> hints = { 0, 0 };
+	bool alreadyExist = false;
 	for (int i = 0; i < userCode.size(); i++) {
-		bool alreadyExist = false;
+		// bool alreadyExist = false;
 		if (userCode[i] == code[i]) {
 			hints[0]++;
 		}
