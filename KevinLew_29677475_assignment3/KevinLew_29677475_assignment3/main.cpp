@@ -11,6 +11,7 @@ int main() {
 void gameControl() {
 	bool notEnd = true;
 	int score = 0;
+	std::vector<int> scoreVec;
 	int row, column;
 	std::string playAgain;
 	printInfo();
@@ -19,6 +20,16 @@ void gameControl() {
 		return;
 	}
 	while (notEnd) {
+		// calculate player's score on SPECFIC ROUND
+		scoreVec.push_back(player.getScore());
+		if (scoreVec.size() > 2) {
+			scoreVec.pop_back();
+			score = player.getScore() - scoreVec.back();
+			scoreVec.push_back(player.getScore());
+		}
+		else {
+			score = player.getScore();
+		}
 		player = determinePromotion(player);
 		if (player.getPlayerName() == "QUITHASBEENENTERED") {
 			break;
@@ -172,6 +183,7 @@ Player playerTurn(Player player, Board board, std::vector<int> code) {
 		rowsUsed++;
 		if (hints[0] == board.getBoardSizeColumn()) {
 			win = true;
+			player.incrementNumberOfWins();
 			std::cout << "\nYou may have won, BUT YOU GET NO COOKIE" << std::endl;
 		}
 	}
@@ -210,7 +222,7 @@ std::vector<int> compareUserCode(std::vector<int> userCode, std::vector<int>code
 		}
 		for (int j = 0; j < code.size(); j++) {
 
-			if (userCode[j] == code[i] & !alreadyExist) {
+			if (userCode[i] == code[j] & !alreadyExist) {
 				hints[1]++;
 				alreadyExist = true;
 			}
@@ -240,8 +252,11 @@ std::vector<int> computePlayerInput(Board board) {
 		return std::vector<int> {0};
 	}
 	while (incorrectInput) {
+		if (userCode == "quit") {
+			return std::vector<int> {0};
+		}
 		if (userCode.size() != board.getBoardSizeColumn()) {
-			std::cout << "\nPlease enter a valid option.\n" << std::endl;
+			std::cout << "\nPlease enter a valid option (e.g. '1234'): ";
 			std::cin.clear();
 			std::cin.ignore(256, '\n');
 			std::cin >> userCode;
@@ -260,9 +275,15 @@ std::vector<int> computePlayerInput(Board board) {
 }
 
 int calculateScore(int rowsUsed, Player player, Board board) {
-	int unusedTurns = board.getBoardSizeRow() - rowsUsed;
-	int turnsTaken = rowsUsed;
-	return 100 - 5 * turnsTaken + 8 * unusedTurns;
+	if (rowsUsed == board.getBoardSizeRow()) {
+		return 0;
+	}
+	else {
+		int unusedTurnsBonus = 10 * (board.getBoardSizeRow() - rowsUsed);
+		int turnsTakenNegative = 5 * rowsUsed;
+		int difficultyBonus = 10 * player.getDifficulty();
+		return difficultyBonus + unusedTurnsBonus - turnsTakenNegative;
+	}
 }
 
 Player determinePromotion(Player player) {
@@ -279,8 +300,19 @@ Player determinePromotion(Player player) {
 			return empty;
 		}
 		if (promoteInput == "y") {
+			std::cout << "Congratulations, you have been promoted, enjoy it while you can.\n" << std::endl;
 			player.setNewDifficulty(1);
 		}
+		else if(promoteInput == "n") {
+			std::cout << "Are you a psychopath to not want a promotion? Alright, you may continue.\n" << std::endl;
+		}
+		else {
+			std::cout << "\nPlease enter a valid option.\n" << std::endl;
+			std::cin.clear();
+			std::cin.ignore(256, '\n');
+		}
+		player.resetGamesUntilPromotion();
+		system("pause");
 	}
 	return player;
 }

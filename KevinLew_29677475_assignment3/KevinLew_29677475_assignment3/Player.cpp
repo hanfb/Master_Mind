@@ -59,6 +59,9 @@ void Player::changeGamesUntilPromotion(bool win) {
 		gamesUntilPromotion = 5;
 	}
 }
+void Player::resetGamesUntilPromotion() {
+	gamesUntilPromotion = 5;
+}
 void Player::changeGamesUntilDemotion(bool win) {
 	if (!win) {
 		gamesUntilDemotion--;

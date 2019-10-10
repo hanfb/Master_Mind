@@ -33,6 +33,7 @@ public:
 	void setNewDifficulty(int direction);
 	void incrementNumberOfWins();
 	void changeGamesUntilPromotion(bool win);
+	void resetGamesUntilPromotion();
 	void changeGamesUntilDemotion(bool win);
 };
 #endif
